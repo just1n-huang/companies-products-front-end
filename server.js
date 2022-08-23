@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const { faker } = require("@faker-js/faker");
 
 const app = express();
 app.use("/dist", express.static("dist"));
