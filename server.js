@@ -1,0 +1,16 @@
+const express = require("express");
+const path = require("path");
+const { faker } = require("@faker-js/faker");
+
+const app = express();
+app.use("/dist", express.static("dist"));
+
+app.get("/", async (req, res, next) =>
+  res.sendFile(path.join(__dirname, "index.html"))
+);
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
